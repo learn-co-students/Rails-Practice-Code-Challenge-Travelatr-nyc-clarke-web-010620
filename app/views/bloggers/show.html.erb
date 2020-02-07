@@ -1,9 +1,13 @@
 <h1><%=@blogger.name%></p>
-<p>BIO: <%=@blogger.bio%></p>
-<p>AGE: <%=@blogger.age%></p>
-<br>
+<h3>BIO: <%=@blogger.bio%></h3>
+<h3>AGE: <%=@blogger.age%></h3>
+<p>Total Likes:<%= @total_likes %></p><br>
+<h4>CHECK OUT MY FEATURED POST: <%= link_to @blogger.top_post.title, post_path(@blogger.top_post)%></h4>
+<h4>CHECK OUT MY TOP 5 DESTINATIONS: <% @blogger.tf_dests.keys.each do |d| %><h4>
+<h5><%= link_to d.name, destination_path(d)%> : <%= d.country  %> </h5> 
+<% end.first(5) %>
 
-<p>Total Likes:<%= @total_likes %></p>
+
+<%= button_to "Back to Bloggers Index", bloggers_path, method: :get %>
 <%= button_to "Edit Blogger", edit_blogger_path, method: :get %>
 <%= button_to "Delete Blogger", @blogger, method: :delete %>
-<%= button_to "Back to index", bloggers_path, method: :get %>
