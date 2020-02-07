@@ -1,0 +1,9 @@
+<h1><%=@blogger.name%></p>
+<p>BIO: <%=@blogger.bio%></p>
+<p>AGE: <%=@blogger.age%></p>
+<br>
+
+<p>Total Likes:<%= @total_likes %></p>
+<%= button_to "Edit Blogger", edit_blogger_path, method: :get %>
+<%= button_to "Delete Blogger", @blogger, method: :delete %>
+<%= button_to "Back to index", bloggers_path, method: :get %>

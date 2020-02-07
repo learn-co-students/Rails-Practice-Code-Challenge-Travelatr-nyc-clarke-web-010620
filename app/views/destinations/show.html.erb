@@ -1,0 +1,7 @@
+<h1><%= @destination.name %></h1>
+<h2><%= @destination.country %></h2>
+<% @destination.posts.each do |p|%>
+<%= p.content%><br><br>
+<% end %>
+
+<%= link_to "BACK TO DESTINATIONS", destinations_path%>

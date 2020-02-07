@@ -1,0 +1,10 @@
+<h1> <%= @post.title  %></h1>
+<p><%= @post.content %></p><br>
+BLOGGER: <%= link_to @post.blogger.name, blogger_path(@post.blogger) %> <br>
+DESTINATION: <%= link_to @post.destination.name, destination_path(@post.destination)%> <br>
+LIKES: <%= @post.likes %>
+<%= button_to "LIKE", like_path, method: :post %>
+<%= button_to "DELETE POST", @post, method: :delete %>
+<%= button_to "EDIT POST", edit_post_path, method: :get %>
+<%= button_to "BACK TO POSTS", posts_path, method: :get %>
+
