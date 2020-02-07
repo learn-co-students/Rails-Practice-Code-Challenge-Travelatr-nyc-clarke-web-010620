@@ -1,0 +1,7 @@
+<h1>DESTINATIONS</h1>
+<% @destinations.each do |d| %>
+<h4>DESTINATION: <%=link_to  d.name, destination_path(d) %> </h4>
+<h5>COUNTRY: <%= d.country %></h5>
+<% end %>
+<%= link_to "GO TO POSTS", posts_path%><br>
+<%= link_to "GO TO BLOGGERS", bloggers_path%>

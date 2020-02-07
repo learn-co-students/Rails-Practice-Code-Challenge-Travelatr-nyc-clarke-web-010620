@@ -1,0 +1,6 @@
+
+<h1><%= button_to "CREATE POST", new_post_path, method: :get %>
+<%= button_to "SEARCH FOR BLOGGER", bloggers_path, method: :get %></h1>
+<% @posts.each do |post|%>
+<%= link_to post.title, post_path(post) %> <br>
+<% end  %>
