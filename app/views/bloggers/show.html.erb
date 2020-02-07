@@ -1,0 +1,31 @@
+<h1><%= @blogger.name %></h1>
+
+<p><%= @blogger.age %></p>
+
+<p><%= @blogger.bio %></p><br>
+
+<h1>Total Likes</h1><br>
+
+<%= @blogger.total_likes %><br>
+
+<h1>Blogger's Posts</h1>
+
+<% @blogger.posts.each do |post|%>
+<%= link_to post.title, post_path %>
+<% end %>
+
+<h1>Delete Blogger</h1>
+
+<%= button_to "Delete Blogger", blogger_path(@blogger), method: :delete %>
+
+<h1>Most Liked Post</h1>
+
+<% if @blogger.posts.count > 0 %>
+    <p><%= link_to @blogger.most_liked_post.title, post_path(@blogger.most_liked_post)%><p>
+    <p><%=  @blogger.most_liked_post.likes %> Likes</p>
+<% else %>
+    <p>No Posts</p>
+<% end %>
+
+
+
